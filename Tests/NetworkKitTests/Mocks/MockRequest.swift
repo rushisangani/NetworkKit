@@ -17,13 +17,3 @@ public struct MockCommentsRequest: Request {
         try! createURLRequest().url!
     }
 }
-
-public struct MockPostsRequest: Request {
-    public var scheme: String { "https" }
-    public var host: String { "jsonplaceholder.typicode.com" }
-    public var path: String { "/posts" }
-    
-    var url: URL {
-        try! createURLRequest().url!
-    }
-}

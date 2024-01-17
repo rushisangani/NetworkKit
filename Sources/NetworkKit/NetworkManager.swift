@@ -21,7 +21,7 @@ public final class NetworkManager: NetworkHandler {
     var requestHandler: RequestHandler
     var responseHandler: ResponseHandler
     
-    init(requestHandler: RequestHandler = APIRequestHandler(),
+    public init(requestHandler: RequestHandler = APIRequestHandler(),
          responseHandler: ResponseHandler = APIResponseHandler()
     ) {
         self.requestHandler = requestHandler

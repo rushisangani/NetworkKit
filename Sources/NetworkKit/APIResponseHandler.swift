@@ -10,20 +10,20 @@ import Combine
 
 // MARK: - ResponseHandler
 
-protocol ResponseHandler {
+public protocol ResponseHandler {
     func getResponse<T: Decodable>(from response: Data) throws -> T
 }
 
 // MARK: - APIResponseHandler
 
-struct APIResponseHandler: ResponseHandler {
+public struct APIResponseHandler: ResponseHandler {
     let decoder: JSONDecoder
     
-    init(decoder: JSONDecoder = JSONDecoder()) {
+    public init(decoder: JSONDecoder = JSONDecoder()) {
         self.decoder = decoder
     }
     
-    func getResponse<T: Decodable>(from data: Data) throws -> T {
+    public func getResponse<T: Decodable>(from data: Data) throws -> T {
         do {
             return try decoder.decode(T.self, from: data)
         } catch {

@@ -19,19 +19,19 @@ public protocol Request {
 }
 
 extension Request {
-    var scheme: String {
+    public var scheme: String {
         "https"
     }
     
-    var headers: [String: String] {
+    public var headers: [String: String] {
         [:]
     }
     
-    var params: [String: Any] {
+    public var params: [String: Any] {
         [:]
     }
     
-    var requestType: RequestType {
+    public var requestType: RequestType {
         .get
     }
     

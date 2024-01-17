@@ -7,19 +7,19 @@
 
 import Foundation
 
-class MockURLProtocol: URLProtocol {
-    static var error: Error?
-    static var requestHandler: ((URLRequest) throws -> (Data, HTTPURLResponse))?
+public final class MockURLProtocol: URLProtocol {
+    public static var error: Error?
+    public static var requestHandler: ((URLRequest) throws -> (Data, HTTPURLResponse))?
     
-    override class func canInit(with request: URLRequest) -> Bool {
+    public override class func canInit(with request: URLRequest) -> Bool {
         true
     }
     
-    override class func canonicalRequest(for request: URLRequest) -> URLRequest {
+    public override class func canonicalRequest(for request: URLRequest) -> URLRequest {
         request
     }
     
-    override func startLoading() {
+    public override func startLoading() {
         if let error = MockURLProtocol.error {
             client?.urlProtocol(self, didFailWithError: error)
             return
@@ -40,13 +40,13 @@ class MockURLProtocol: URLProtocol {
         }
     }
     
-    override func stopLoading() {
+    public override func stopLoading() {
     }
 }
 
 extension URLSession {
     
-    static var mock: URLSession {
+    public static var mock: URLSession {
         let configuration: URLSessionConfiguration = .ephemeral
         configuration.protocolClasses = [MockURLProtocol.self]
         return URLSession(configuration: configuration)

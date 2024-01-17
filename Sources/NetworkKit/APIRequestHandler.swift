@@ -20,7 +20,7 @@ public protocol RequestHandler {
 public struct APIRequestHandler: RequestHandler {
     let session: URLSession
     
-    init(session: URLSession = .shared) {
+    public init(session: URLSession = .shared) {
         self.session = session
     }
     
