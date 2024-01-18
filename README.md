@@ -4,7 +4,7 @@ iOS app's connectivity with NetworkKit – a simple yet powerful network layer s
 
 # GitHub Repos 
 
-[SwiftMVVMDemo](https://github.com/rushisangani/SwiftMVVMDemo)
+Checkout this sample project [SwiftMVVMDemo](https://github.com/rushisangani/SwiftMVVMDemo).
 
 ## Examples
 
